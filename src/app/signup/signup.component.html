@@ -1,0 +1,138 @@
+<main>
+    <div class="container">
+
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="d-flex justify-content-center py-4">
+                            <a routerLink="/" class="logo d-flex align-items-center w-auto">
+
+                                <span class="d-none d-lg-block">SSIP Face</span>
+                            </a>
+                        </div><!-- End Logo -->
+
+                        <div class="card mb-3">
+
+                            <div class="card-body">
+
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Register to Your Account</h5>
+                                    <p class="text-center small">Enter your details given below to register with us</p>
+                                </div>
+
+                                <form class="row g-3 needs-validation" [formGroup]="signupForm" (ngSubmit)="submit()"
+                                    novalidate>
+
+                                    <div class="col-12">
+                                        <label for="yourname" class="form-label">Full Name</label>
+                                        <div class="input-group has-validation">
+                                            <input type="text" formControlName="name" class="form-control" id="yourname"
+                                                placeholder="Please Enter Your Name" required>
+                                           
+                                        </div>
+                                        <div *ngIf="signupForm.controls['name'].errors?.['required']"
+                                        style="color: red;">
+                                        Name is required.
+                                    </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="youremail" class="form-label">Email-ID</label>
+                                        <div class="input-group has-validation">
+                                            <input type="text" formControlName="email" class="form-control"
+                                                id="youremail" placeholder="Please Enter Your Email" required>
+                                               
+                                        </div>
+                                        <div *ngIf="signupForm.controls['email'].errors?.['required']"
+                                        style="color: red;">
+                                        Email is required.
+                                    </div>
+                                    </div>
+                                    <legend class="col-form-label col-sm-3 pt-0">Gender</legend>
+                                    <fieldset class="row">
+                                        <div class="col">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" formControlName="gender"
+                                                    id="gridRadios1" value="Male" checked>
+                                                <label class="form-check-label" for="gridRadios1">
+                                                    Male
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" formControlName="gender"
+                                                    id="gridRadios2" value="Female">
+                                                <label class="form-check-label" for="gridRadios2">
+                                                    Female
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="signupForm.controls['gender'].errors?.['required']"
+                                                style="color: red;">
+                                                Gender is required.
+                                            </div>
+                                    </fieldset>
+
+                                    <div class="col-12">
+                                        <label for="yournumber" class="form-label">Contact Number</label>
+                                        <div class="input-group has-validation">
+                                            <input type="text" formControlName="phonenumber" class="form-control"
+                                                id="yournumber" placeholder="Please Enter Your Contact Number" required>
+                                               
+                                        </div>
+                                        <div *ngIf="signupForm.controls['phonenumber'].errors?.['required']"
+                                        style="color: red;">
+                                        Contact Number is required.
+                                    </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="yourPassword" class="form-label">Password</label>
+                                        <input type="password" formControlName="password" class="form-control"
+                                            id="yourPassword" placeholder="Please enter your password" required>
+                                            <div *ngIf="signupForm.controls['password'].errors?.['required']"
+                                                style="color: red;">
+                                                Password is required.
+                                            </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                        <input type="password" formControlName="confirmpassword" class="form-control"
+                                            id="confirmPassword" placeholder="Please confirm your password" required>
+                                            <div *ngIf="signupForm.controls['confirmpassword'].errors?.['required']"
+                                                style="color: red;">
+                                                ConfirmPassword is required.
+                                            </div>
+                                    </div>
+
+                                    <!-- <div class="col-12">
+                                        <label for="inputfile" class="form-label">Upload Image</label>
+                                        <input type="file" name="inputfile" class="form-control" id="inputfile"required>
+                                    </div> -->
+
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100" type="submit">Submit</button>
+                                    </div>
+                                    <div class="col-12">
+                                        <p class="small mb-0">Already have account? <a routerLink="/">Signin</a>
+                                        </p>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</main><!-- End #main -->

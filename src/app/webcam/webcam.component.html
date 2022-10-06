@@ -1,0 +1,71 @@
+<app-header></app-header>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <div class="row">
+            <div class="col">
+              <h1>Image Capture</h1>
+            </div>
+            <div class="col">
+              <a routerLink="/dashboard"><button type="button" class="btn btn-primary" style="float: right;">
+                  < Back</button></a>
+            </div>
+          </div>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/dashboard">Home</a></li>
+                <li class="breadcrumb-item active">Take Photo</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+
+        <div>
+            <button type="button" class="btn btn-primary" (click)="checkPermissions()">Give Access to
+                Webcam</button><br>
+            <!-- <p *ngIf="status">Status : <span style="color: green;">{{status}} </span></p> -->
+        </div>
+<br>
+        <div class="row">
+
+            <!-- Left side columns -->
+            <div class="col">
+                <div class="row">
+
+                    <div class="col">
+                        <div *ngIf="stream" class="card info-card sales-card">
+
+                            <div class="card-body">
+                                <h5 class="card-title">Capturing Image</h5>
+                                <div *ngIf="stream">
+                                    <!-- web cam image will be shown here -->
+                                    <webcam [trigger]="$trigger" (imageCapture)="snapshot($event)" [imageQuality]="1">
+                                    </webcam><br>
+                                    <button type="button" class="btn btn-danger"
+                                        (click)="captureImage()">{{btnLabel}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div *ngIf="previewImage" class="card info-card sales-card">
+
+                            <div class="card-body">
+                                <!-- Preview section -->
+                                <h5 class="card-title">Preview Captured Image</h5>
+                                <div *ngIf="previewImage">
+                                   
+                                    <img [src]="previewImage" height="200" width="200"><br><br>
+                                    <button type="button" class="btn btn-success" (click)="proceed()">Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,71 @@
+<app-header></app-header>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Criminals</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/criminals">Criminal</a></li>
+                <li class="breadcrumb-item active">Criminals Details</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+
+            <!-- Left side columns -->
+            <div class="col">
+                <div class="row">
+
+                
+                    <div class="col">
+                        <div class="card info-card sales-card">
+
+                            <div class="card-body"><br>
+                               <!-- <a routerLink="/addcriminal"><button type="button" class="btn btn-primary" style="float: right;">+ Add</button></a> -->
+                               <!-- <a  id="btnExport"><button type="button" class="btn btn-primary" style="float: left;" ><i class="bi bi-file-earmark-pdf"></i> Export</button></a> -->
+                                <br><br>
+                                <table id="tblCriminal" datatable [dtOptions]="dtOptions" class="row-border hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Gender</th>
+                                            <th>City</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Suresh</td>
+                                            <td>25</td>
+                                            <td>Male</td>
+                                            <td>Ahmedabad</td>
+                                            <td>
+                                                <a routerLink="/criminaldetail">Get Details</a> 
+                                            </td>
+                                        </tr>
+
+                                       
+                            
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div><!-- End Left side columns -->
+
+            
+        </div>
+    </section>
+
+</main><!-- End #main -->
